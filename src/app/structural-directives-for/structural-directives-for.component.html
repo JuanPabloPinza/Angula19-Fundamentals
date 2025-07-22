@@ -1,0 +1,84 @@
+<div>
+    <h1>Examples For (ngFor vs for)</h1>
+</div>
+
+<div>
+    <div>
+        <h4>Using ngFor</h4>
+        <div>
+            <select name="" id="">
+                <option [value]="usuario.id" *ngFor="let usuario of lista">
+                    {{usuario.nombre}} - {{usuario.edad}}
+                </option>
+            </select>
+        </div>
+        <h4>Example in a Table</h4>
+        <div>
+            <table>
+                <thead>
+                    <tr>Nombre</tr>
+                    <tr>Edad</tr>
+                    <tr>Contratado</tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let individual of lista">
+                        <td>{{individual.nombre}}</td>
+                        <td>{{individual.edad}}</td>
+                        <td>{{individual.activo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div>
+        <h4>Using for</h4>
+        <div>
+            <select name="" id="">
+                @for(usuario of lista; track usuario;){
+                <option [value]="usuario.id">
+                    {{usuario.nombre}} - {{usuario.id}}
+                </option>
+                }
+            </select>
+        </div>
+        <h4>Example in a Table</h4>
+        <div>
+            <table>
+                <thead>
+                    <tr>Nombre</tr>
+                    <tr>Edad</tr>
+                    <tr>Estado</tr>
+                </thead>
+                <tbody>
+                    @for(individual of lista; track individual;){
+                    <tr>
+                        <td>{{individual.nombre}}</td>
+                        <td>{{individual.edad}}</td>
+                        <td>{{individual.activo}}</td>
+                    </tr>
+                    }
+
+                </tbody>
+                <!-- Example with let f, l, e, o, c, i -->
+                @for(individual of lista; let first = $first; let last = $last; let even = $even; let odd = $odd; let
+                count = $count; let index = $index; track individual){
+                <tr>
+                    <td>{{individual.nombre}}</td>
+                    <td>{{individual.edad}}</td>
+                    <td>{{individual.activo}}</td>
+                    <td>First: {{first}}</td>
+                    <td>Last: {{last}}</td>
+                    <td>Even: {{even}}</td>
+                    <td>Odd: {{odd}}</td>
+                    <td>Count: {{count}}</td>
+                    <td>Index: {{index}}</td>
+                </tr>
+                }
+                @empty {Nothing Found}
+            </table>
+        </div>
+
+    </div>
+</div>

@@ -10,17 +10,11 @@
                 <label class="form-check-label" for=""> Default checkbox </label>
             </div>
             <button>Appears</button>
-            <div class="form-check" >
-                <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id=""
-                    checked
-                />
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="" checked />
                 <label class="form-check-label" for=""> Checked checkbox</label>
             </div>
-            
+
         </div>
     </div>
     <div>
@@ -40,5 +34,22 @@
             <p *ngIf="input1===input2">Textos iguales</p>
             <p *ngIf="input1!==input2">Textos diferentes</p>
         </div>
+    </div>
+
+
+    <div>
+        <h4>Ahora con If</h4>
+        <div>
+            @if(isChecked){
+            <button>Appears</button>
+            }
+        </div>
+
+        <h4>Ahora con los dos input</h4>
+        @if(input1!==input2){
+            <p>Los textos son diferentes</p>
+        }@else if (input1!==input2) {
+            <p>Los textos son iguales</p>
+        }
     </div>
 </div>
