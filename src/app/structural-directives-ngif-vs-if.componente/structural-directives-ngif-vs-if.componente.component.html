@@ -1,0 +1,44 @@
+<div>
+    <h4>Testing ngIF vs if.component</h4>
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <h4>
+                Terms
+            </h4>
+            <div class="form-check" (click)="onClick()">
+                <input class="form-check-input" type="checkbox" value="" id="" />
+                <label class="form-check-label" for=""> Default checkbox </label>
+            </div>
+            <button>Appears</button>
+            <div class="form-check" >
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id=""
+                    checked
+                />
+                <label class="form-check-label" for=""> Checked checkbox</label>
+            </div>
+            
+        </div>
+    </div>
+    <div>
+        <h4>NGIF</h4>
+        <div *ngIf="isInputBox">
+            <input type="text">
+        </div>
+        <button (click)="showField()">Show</button>
+        <button (click)="hideField()">Hide</button>
+    </div>
+
+    <div>
+        <h4>Comparar dos input</h4>
+        <div>
+            <input [(ngModel)]="input1" type="text">
+            <input [(ngModel)]="input2" type="text">
+            <p *ngIf="input1===input2">Textos iguales</p>
+            <p *ngIf="input1!==input2">Textos diferentes</p>
+        </div>
+    </div>
+</div>

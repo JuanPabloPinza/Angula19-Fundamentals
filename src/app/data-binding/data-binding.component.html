@@ -1,0 +1,32 @@
+<div align="center">
+    <h4>Interpolation</h4>
+    <div>
+        <p>{{topic}}{{name}}</p>
+    </div>
+    <h4>Property Binding</h4>
+    <div>
+        <p>
+            <input [value]="value">
+        </p>
+    </div>
+    <div>
+        <p><button [class]="value">xd</button></p>
+    </div>
+    <h4>Event Binding</h4>
+    <div>
+        <button (click)="onSave()">
+            Hola
+        </button>
+        <select (change)="onChange()" id="">
+            <option value="Country">Country</option>
+            <option value="Ec">Ec</option>
+        </select>
+    </div>
+    <h4>Two-Way Data Binding</h4>
+    <div>
+        <p>Hola</p>
+        <input type="text" [(ngModel)]="random">{{random}}
+    </div>
+</div>
+
+<!-- Directivas son clases que le dan comportamientos adicionales  -->

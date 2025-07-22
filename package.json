@@ -1,5 +1,5 @@
 {
-  "name": "keycloak-demo",
+  "name": "angular-basics",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:keycloak-demo": "node dist/keycloak-demo/server/server.mjs"
+    "serve:ssr:angular-basics": "node dist/angular-basics/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +21,6 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.15",
     "express": "^4.18.2",
-    "keycloak-angular": "^19.0.2",
-    "keycloak-js": "^26.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

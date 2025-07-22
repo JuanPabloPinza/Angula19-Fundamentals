@@ -1,17 +1,3 @@
-// src/app/app.routes.ts
-
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { AuthGuard } from './auth.guard';
 
-export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AuthGuard] // <-- ¡Aquí protegemos la ruta!
-  },
-  // Redirige cualquier otra cosa a la página de inicio
-  { path: '**', redirectTo: '' }
-];
+export const routes: Routes = [];
