@@ -1,0 +1,18 @@
+<!-- src/app/components/nav/nav.component.html -->
+<nav>
+  <ul>
+    <li><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/profile">Perfil</a></li>
+  </ul>
+
+  <div class="auth-controls">
+    @if (keycloak.authenticated) {
+      <span>Hola, {{ keycloak.tokenParsed?['preferred_username'] }}</span>
+      <!-- Este botón solo se muestra si el usuario tiene el rol 'admin' del realm -->
+      <button *kaHasRoles="['admin']; kaHasRolesCheckRealm: true">Panel Admin</button>
+      <button (click)="logout()">Cerrar Sesión</button>
+    } @else {
+      <button (click)="login()">Iniciar Sesión</button>
+    }
+  </div>
+</nav>
